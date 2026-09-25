@@ -16,29 +16,32 @@
     } catch (error) {}
   }
 
-  function updateButton(theme) {
+  function syncButton(theme) {
     const button = document.querySelector('.theme-toggle');
     if (!button) return;
 
     const label = theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro';
     button.setAttribute('aria-label', label);
-    button.setAttribute('title', label);
+    button.setAttribute('data-bs-title', label);
+
+    const tooltip = window.bootstrap && bootstrap.Tooltip.getInstance(button);
+    if (tooltip) tooltip.setContent({ '.tooltip-inner': label });
   }
 
   function applyTheme(theme) {
-    root.setAttribute('data-theme', theme);
-    updateButton(theme);
+    root.setAttribute('data-bs-theme', theme);
+    syncButton(theme);
   }
 
   applyTheme(readTheme() === 'light' ? 'light' : 'dark');
 
   document.addEventListener('DOMContentLoaded', function () {
     const button = document.querySelector('.theme-toggle');
-    updateButton(root.getAttribute('data-theme'));
+    syncButton(root.getAttribute('data-bs-theme'));
     if (!button) return;
 
     button.addEventListener('click', function () {
-      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      const next = root.getAttribute('data-bs-theme') === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       saveTheme(next);
     });

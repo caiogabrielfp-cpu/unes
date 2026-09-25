@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,142 +12,302 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Source+Sans+3:wght@400;600;700;800&display=swap">
 
-  <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/components/header.css">
-  <link rel="stylesheet" href="css/components/card.css">
-  <link rel="stylesheet" href="css/components/footer.css">
-  <link rel="stylesheet" href="css/pages/sobre.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <script src="js/theme.js"></script>
 </head>
 <body>
 
-  <header class="header">
-    <div class="container header__inner">
-      <a href="index.html" class="logo" aria-label="UNFD, Universidade Federal de Direito. Ir para a página inicial">
-        <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path class="logo__brain" d="M30 11c-5-2-10-1-13 3-5 0-8 4-8 8-4 2-5 7-3 11-2 4 0 9 4 10 0 5 5 8 10 7 3 3 7 3 10 1Z"/>
-          <path class="logo__folds" d="M23 13c-1 3 1 5 4 5M11 23c3-1 6 1 6 4M28 25c-4 0-6 3-5 6M19 32c-3 0-5 2-5 5M17 45c1-3 4-4 7-3M30 38c-3 1-4 3-3 6"/>
-          <path class="logo__scale" d="M33 10v43M26 54h14M33 17h20M53 17l-6 17M53 17l6 17"/>
-          <path class="logo__scale logo__scale--pan" d="M45 34h16a8 5 0 0 1-16 0Z"/>
-          <circle class="logo__scale-top" cx="33" cy="9" r="2.8"/>
-        </svg>
-        <span class="logo__text">
-          <span class="logo__name">unfd</span>
-          <span class="logo__tagline">universidade</span>
-        </span>
+  <nav class="navbar navbar-expand-lg navbar-unfd sticky-top" aria-label="Navegação principal">
+    <div class="container">
+      <a class="navbar-brand logo" href="index.html" aria-label="UNFD, Universidade Federal de Direito. Ir para a página inicial">
+          <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path class="logo__brain" d="M30 11c-5-2-10-1-13 3-5 0-8 4-8 8-4 2-5 7-3 11-2 4 0 9 4 10 0 5 5 8 10 7 3 3 7 3 10 1Z"/>
+            <path class="logo__folds" d="M23 13c-1 3 1 5 4 5M11 23c3-1 6 1 6 4M28 25c-4 0-6 3-5 6M19 32c-3 0-5 2-5 5M17 45c1-3 4-4 7-3M30 38c-3 1-4 3-3 6"/>
+            <path class="logo__scale" d="M33 10v43M26 54h14M33 17h20M53 17l-6 17M53 17l6 17"/>
+            <path class="logo__scale logo__scale--pan" d="M45 34h16a8 5 0 0 1-16 0Z"/>
+            <circle class="logo__scale-top" cx="33" cy="9" r="2.8"/>
+          </svg>
+          <span class="logo__text">
+            <span class="logo__name">unfd</span>
+            <span class="logo__tagline">universidade</span>
+          </span>
       </a>
 
-      <div class="header__right">
-        <nav class="nav" aria-label="Navegação principal">
-          <ul class="nav__list">
-            <li><a class="nav__link" href="index.html">Home</a></li>
-            <li><a class="nav__link" href="sobre.html" aria-current="page">Sobre</a></li>
-            <li><a class="nav__link" href="contato.html">Contato</a></li>
+      <div class="offcanvas offcanvas-end offcanvas-unfd" tabindex="-1" id="menu" aria-labelledby="menu-title">
+        <div class="offcanvas-header">
+          <h2 class="offcanvas-title fs-5" id="menu-title">Menu</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar menu"></button>
+        </div>
+        <div class="offcanvas-body align-items-lg-center">
+          <ul class="navbar-nav ms-auto gap-lg-2">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link active" aria-current="page" href="sobre.html">Sobre</a></li>
+              <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
           </ul>
-        </nav>
+          <a class="btn btn-unfd btn-sm ms-lg-4 mt-4 mt-lg-0" href="sobre.html#ingresso">Vestibular</a>
+        </div>
+      </div>
 
-        <button type="button" class="theme-toggle" aria-label="Ativar tema claro" title="Ativar tema claro">
-          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="4.5"/>
-            <path d="M12 2v2.5M12 19.5V22M4.2 4.2 6 6M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/>
-          </svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/>
-          </svg>
+      <div class="d-flex align-items-center gap-2 ms-lg-3">
+        <button type="button" class="theme-toggle" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Ativar tema claro" aria-label="Ativar tema claro">
+          <i class="bi bi-sun" aria-hidden="true"></i>
+          <i class="bi bi-moon-stars" aria-hidden="true"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </div>
-  </header>
+  </nav>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__content">
-        <p class="hero__eyebrow">Quem somos</p>
-        <h1 class="hero__title" id="hero-title">Uma nova universidade para o Direito</h1>
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sobre</li>
+          </ol>
+        </nav>
+        <h1 class="page-title">Uma nova universidade para o Direito</h1>
+        <p class="page-lead">Ensino público e gratuito, construído para formar juristas preparados para o seu tempo.</p>
       </div>
-
-      <span class="hero__blob" aria-hidden="true"></span>
-      <span class="hero__dots" aria-hidden="true"></span>
+      <span class="decor-blob" aria-hidden="true"></span>
+      <span class="decor-dots" aria-hidden="true"></span>
     </section>
 
-    <section class="section">
-      <div class="container container--narrow">
+    <section class="section-unfd" aria-labelledby="quem-somos-title">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-6">
+            <h2 class="section-title" id="quem-somos-title">Quem somos</h2>
+            <p class="text-soft">
+              A UNFD é uma universidade federal criada para formar juristas éticos, críticos e
+              comprometidos com a cidadania. Como instituição pública, oferece ensino gratuito e se
+              apoia no tripé ensino, pesquisa e extensão.
+            </p>
+            <p class="text-soft mb-0">
+              Estamos recebendo a nossa primeira turma e construindo, junto com ela, uma tradição de
+              excelência na formação jurídica.
+            </p>
+          </div>
 
-        <article class="content-block" aria-labelledby="quem-somos-title">
-          <h2 class="section-title" id="quem-somos-title">Quem somos</h2>
-          <p class="text">
-            A UNFD é uma universidade federal criada para formar juristas éticos,
-            críticos e comprometidos com a cidadania. Como instituição pública, oferece
-            ensino gratuito e se apoia no tripé ensino, pesquisa e extensão.
-          </p>
-          <p class="text">
-            Estamos recebendo a nossa primeira turma e construindo, junto com ela, uma
-            tradição de excelência na formação jurídica.
-          </p>
-        </article>
+          <div class="col-lg-6">
+            <div class="card card-unfd">
+              <div class="card-body">
+                <ul class="nav nav-pills nav-pills-unfd mb-4" id="proposta-tabs" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="missao-tab" data-bs-toggle="pill" data-bs-target="#missao" type="button" role="tab" aria-controls="missao" aria-selected="true">Missão</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="visao-tab" data-bs-toggle="pill" data-bs-target="#visao" type="button" role="tab" aria-controls="visao" aria-selected="false">Visão</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="valores-tab" data-bs-toggle="pill" data-bs-target="#valores" type="button" role="tab" aria-controls="valores" aria-selected="false">Valores</button>
+                  </li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="missao" role="tabpanel" aria-labelledby="missao-tab" tabindex="0">
+                    <p class="text-soft mb-0">
+                      Formar profissionais do Direito preparados para os desafios de uma sociedade em
+                      constante transformação, unindo ensino, pesquisa e extensão com ética,
+                      responsabilidade social e defesa dos direitos fundamentais.
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="visao" role="tabpanel" aria-labelledby="visao-tab" tabindex="0">
+                    <p class="text-soft mb-0">
+                      Ser referência nacional em ensino jurídico público, reconhecida pela qualidade da
+                      formação e pelo impacto de seus egressos na promoção da justiça.
+                    </p>
+                  </div>
+                  <div class="tab-pane fade" id="valores" role="tabpanel" aria-labelledby="valores-tab" tabindex="0">
+                    <ul class="list-unstyled values-list text-soft mb-0">
+                      <li><i class="bi bi-check2" aria-hidden="true"></i>Ética e integridade</li>
+                      <li><i class="bi bi-check2" aria-hidden="true"></i>Ensino público, gratuito e de qualidade</li>
+                      <li><i class="bi bi-check2" aria-hidden="true"></i>Respeito à diversidade</li>
+                      <li><i class="bi bi-check2" aria-hidden="true"></i>Compromisso com os direitos fundamentais</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="content-block" aria-labelledby="motivos-title">
-          <h2 class="section-title" id="motivos-title">5 motivos para estudar na UNFD</h2>
-
-          <div class="cards">
-            <article class="card">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Ensino público e gratuito</h3>
-              <p class="card__text">Formação de excelência sem mensalidade.</p>
-            </article>
-
-            <article class="card">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Professores renomados</h3>
-              <p class="card__text">Magistrados, promotores e advogados com carreira reconhecida.</p>
-            </article>
-
-            <article class="card">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Júri simulado</h3>
-              <p class="card__text">Sala de audiências para treinar sustentação oral e argumentação.</p>
-            </article>
-
-            <article class="card">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Acervo jurídico completo</h3>
-              <p class="card__text">Doutrina, jurisprudência e legislação sempre atualizadas.</p>
-            </article>
-
-            <article class="card">
-              <span class="card__icon" aria-hidden="true"></span>
-              <h3 class="card__title">Ótima localização</h3>
-              <p class="card__text">Campus a poucos minutos do fórum e dos tribunais.</p>
+    <section class="section-unfd pt-0" id="motivos" aria-labelledby="motivos-title">
+      <div class="container">
+        <h2 class="section-title" id="motivos-title">5 motivos para estudar na UNFD</h2>
+        <div class="row g-4 mt-1">
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-unfd h-100">
+              <div class="card-body">
+                <span class="card-icon" aria-hidden="true"><i class="bi bi-bank"></i></span>
+                <h3 class="card-title">Ensino público e gratuito</h3>
+                <p class="card-text">Formação de excelência sem mensalidade.</p>
+              </div>
             </article>
           </div>
-        </section>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-unfd h-100">
+              <div class="card-body">
+                <span class="card-icon" aria-hidden="true"><i class="bi bi-mortarboard"></i></span>
+                <h3 class="card-title">Professores renomados</h3>
+                <p class="card-text">Magistrados, promotores e advogados com carreira reconhecida.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <article class="card card-unfd h-100">
+              <div class="card-body">
+                <span class="card-icon" aria-hidden="true"><i class="bi bi-megaphone"></i></span>
+                <h3 class="card-title">Júri simulado</h3>
+                <p class="card-text">Sala de audiências para treinar sustentação oral e argumentação.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <article class="card card-unfd h-100">
+              <div class="card-body">
+                <span class="card-icon" aria-hidden="true"><i class="bi bi-book"></i></span>
+                <h3 class="card-title">Acervo jurídico completo</h3>
+                <p class="card-text">Doutrina, jurisprudência e legislação sempre atualizadas.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-12 col-lg-6">
+            <article class="card card-unfd h-100">
+              <div class="card-body">
+                <span class="card-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span>
+                <h3 class="card-title">Ótima localização</h3>
+                <p class="card-text">Campus a poucos minutos do fórum e dos tribunais.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <article class="content-block" aria-labelledby="objetivos-title">
-          <h2 class="section-title" id="objetivos-title">Objetivos</h2>
-          <p class="text">
-            Formar profissionais do Direito preparados para os desafios de uma sociedade
-            em constante transformação, unindo ensino, pesquisa e extensão com ética,
-            responsabilidade social e defesa dos direitos fundamentais.
-          </p>
-        </article>
+    <section class="section-unfd pt-0" id="ingresso" aria-labelledby="ingresso-title">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <h2 class="section-title" id="ingresso-title">Como ingressar</h2>
+            <p class="text-soft">
+              A entrada na UNFD é feita por vestibular próprio, com reserva de vagas conforme a Lei de
+              Cotas. Datas de inscrição, conteúdo das provas e número de vagas são publicados no edital
+              de cada processo seletivo.
+            </p>
+            <a class="btn btn-unfd mt-2" href="index.html#vestibular">Quero receber o edital</a>
+          </div>
 
-        <article class="content-block" aria-labelledby="ingresso-title">
-          <h2 class="section-title" id="ingresso-title">Como ingressar</h2>
-          <p class="text">
-            A entrada na UNFD é feita por vestibular próprio, com reserva de vagas
-            conforme a Lei de Cotas. Datas de inscrição, conteúdo das provas e número de
-            vagas são publicados no edital de cada processo seletivo.
-          </p>
-        </article>
-
+          <div class="col-lg-7">
+            <div class="accordion accordion-unfd" id="faq">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-1" aria-expanded="true" aria-controls="faq-1">
+                    Como funciona o vestibular?
+                  </button>
+                </h3>
+                <div id="faq-1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                  <div class="accordion-body">O vestibular da UNFD tem provas objetivas e redação. O edital de cada processo seletivo traz as datas, o conteúdo cobrado e o número de vagas.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-2" aria-expanded="false" aria-controls="faq-2">
+                    O curso é pago?
+                  </button>
+                </h3>
+                <div id="faq-2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">Não. A UNFD é uma universidade pública federal e não cobra mensalidade.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-3" aria-expanded="false" aria-controls="faq-3">
+                    Existe reserva de vagas?
+                  </button>
+                </h3>
+                <div id="faq-3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">Sim. Conforme a Lei de Cotas (Lei nº 12.711/2012), no mínimo metade das vagas é reservada a quem cursou todo o ensino médio em escola pública, com subdivisões por renda, cor ou etnia e pessoas com deficiência.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-4" aria-expanded="false" aria-controls="faq-4">
+                    Quanto tempo dura o curso?
+                  </button>
+                </h3>
+                <div id="faq-4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">O bacharelado em Direito tem duração de 5 anos, divididos em 10 semestres.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-5" aria-expanded="false" aria-controls="faq-5">
+                    Onde acompanho as datas?
+                  </button>
+                </h3>
+                <div id="faq-5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                  <div class="accordion-body">Aqui no site. Na página inicial, cadastre seu e-mail para receber o edital assim que ele for publicado.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p class="footer__text">© 2026 Universidade Federal de Direito (UNFD). Todos os direitos reservados.</p>
+  <footer class="footer-unfd">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <a class="logo mb-3" href="index.html" aria-label="UNFD, página inicial">
+          <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path class="logo__brain" d="M30 11c-5-2-10-1-13 3-5 0-8 4-8 8-4 2-5 7-3 11-2 4 0 9 4 10 0 5 5 8 10 7 3 3 7 3 10 1Z"/>
+            <path class="logo__folds" d="M23 13c-1 3 1 5 4 5M11 23c3-1 6 1 6 4M28 25c-4 0-6 3-5 6M19 32c-3 0-5 2-5 5M17 45c1-3 4-4 7-3M30 38c-3 1-4 3-3 6"/>
+            <path class="logo__scale" d="M33 10v43M26 54h14M33 17h20M53 17l-6 17M53 17l6 17"/>
+            <path class="logo__scale logo__scale--pan" d="M45 34h16a8 5 0 0 1-16 0Z"/>
+            <circle class="logo__scale-top" cx="33" cy="9" r="2.8"/>
+          </svg>
+            <span class="logo__text">
+              <span class="logo__name">unfd</span>
+              <span class="logo__tagline">universidade</span>
+            </span>
+          </a>
+          <p class="text-soft small mb-0">Universidade Federal de Direito. Ensino jurídico público, gratuito e de excelência.</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Navegação</h2>
+          <ul class="list-unstyled small d-grid gap-2 mb-0">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="sobre.html#ingresso">Vestibular</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3">
+          <h2 class="footer-heading">Fale com a gente</h2>
+          <ul class="list-unstyled small d-grid gap-2 mb-0">
+            <li><a href="mailto:contato@unfd.edu.br">contato@unfd.edu.br</a></li>
+            <li><a href="tel:+550000000000">(00) 0000-0000</a></li>
+            <li class="text-soft">Campus UNFD, Bloco Central</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-top py-3">
+      <p class="container text-center small text-soft mb-0 mw-100">© 2026 Universidade Federal de Direito (UNFD). Todos os direitos reservados.</p>
+    </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
