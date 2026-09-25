@@ -194,7 +194,7 @@ h2 {
 }
 
 .hero__title {
-  max-width: 32ch;
+  max-width: 40ch;
   font-size: clamp(1.7rem, 1.6vw + 1.1rem, 2.25rem);
   color: #fff;
 }
