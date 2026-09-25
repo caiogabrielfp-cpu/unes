@@ -1,0 +1,49 @@
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 2.5rem 3rem;
+}
+
+.contact__form-area,
+.contact__channels {
+  flex: 1 1 320px;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.channel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.channel__icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-channel-icon);
+}
+
+.channel__title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.channel__info {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+a.channel__info:hover {
+  color: var(--color-wine-light);
+  text-decoration: underline;
+}
