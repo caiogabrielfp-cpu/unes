@@ -1,3 +1,12 @@
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  const updateHeader = function () {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+}
+
 document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (element) {
   new bootstrap.Tooltip(element);
 });

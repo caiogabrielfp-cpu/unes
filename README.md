@@ -31,7 +31,7 @@ Abra o `index.html` no navegador ou use a extensão Live Server do VS Code. É p
 
 ## Estilos personalizados
 
-O arquivo `css/style.css` sobrescreve as variáveis do Bootstrap (`--bs-*`) para criar a identidade da UNFD: paleta vinho e dourado, tipografia serifada nos títulos, botão dourado próprio (`.btn-unfd`), formas orgânicas e pontilhado no topo das páginas, além de ajustes no carrossel, accordion, formulários e menu para os dois temas.
+O arquivo `css/style.css` sobrescreve as variáveis do Bootstrap (`--bs-*`) para criar a identidade da UNFD: paleta vinho e dourado, fonte Baloo Bhai 2 em todo o site, header flutuante com efeito de vidro e menu em formato de pílula, botão dourado próprio (`.btn-unfd`), formas orgânicas e pontilhado no topo das páginas, além de ajustes no carrossel, accordion, formulários e menu para os dois temas.
 
 ## Bootstrap x Tailwind
 
